@@ -9,7 +9,15 @@ import LoginPage from "./pages/login";
 import ForgotPassword from "./pages/forgotPassword";
 import AcademicPage from "./Modules/Academic/index";
 import ValidateAuth from "./helper/validateauth";
-import Prescription from "./Modules/Health Center/Medical Relief/Prescription";
+import Apply from "./Modules/Health Center/Patient/Medical Relief/Apply";
+import Approval from "./Modules/Health Center/Patient/Medical Relief/Approval";
+import History from "./Modules/Health Center/Patient/History/History";
+import Prescription from "./Modules/Health Center/Patient/History/Prescription";
+import Announcement from "./Modules/Health Center/Patient/Announcements/Announcement";
+import HistoryCompounder from "./Modules/Health Center/Compounder/History/HistoryComp";
+import UpdatePatient from "./Modules/Health Center/Compounder/History/UpdatePatient";
+import Inbox from "./Modules/Health Center/Compounder/Medical Relief/Inbox";
+import Application from "./Modules/Health Center/Compounder/Medical Relief/Application";
 
 export default function App() {
   const location = useLocation();
@@ -49,14 +57,88 @@ export default function App() {
             </Layout>
           }
         />
+
         <Route
-          path="/medical-relief/prescription"
+          path="/patient/history"
+          element={
+            <Layout>
+              <History />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/patient/history/view"
           element={
             <Layout>
               <Prescription />
             </Layout>
           }
         />
+
+        <Route
+          path="/patent/announcements"
+          element={
+            <Layout>
+              <Announcement />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/patient/medical-relief/apply"
+          element={
+            <Layout>
+              <Apply />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/patient/medical-relief/approval"
+          element={
+            <Layout>
+              <Approval />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/compounder/patient-log/history"
+          element={
+            <Layout>
+              <HistoryCompounder />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/compounder/patient-log/update"
+          element={
+            <Layout>
+              <UpdatePatient />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/compounder/medical-relief/inbox"
+          element={
+            <Layout>
+              <Inbox />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/compounder/medical-relief/application"
+          element={
+            <Layout>
+              <Application />
+            </Layout>
+          }
+        />
+
         <Route path="/accounts/login" element={<LoginPage />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
       </Routes>
