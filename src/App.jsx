@@ -18,6 +18,8 @@ import HistoryCompounder from "./Modules/Health Center/Compounder/History/Histor
 import UpdatePatient from "./Modules/Health Center/Compounder/History/UpdatePatient";
 import Inbox from "./Modules/Health Center/Compounder/Medical Relief/Inbox";
 import Application from "./Modules/Health Center/Compounder/Medical Relief/Application";
+import ViewSchedule from "./Modules/Health Center/Patient/Schedule/Viewdoctor";
+import Feedback from "./Modules/Health Center/Patient/Feedback/feedback";
 
 export default function App() {
   const location = useLocation();
@@ -77,10 +79,26 @@ export default function App() {
         />
 
         <Route
-          path="/patent/announcements"
+          path="/patient/announcements"
           element={
             <Layout>
               <Announcement />
+            </Layout>
+          }
+        />
+        <Route
+          path="/patient/viewschedule"
+          element={
+            <Layout>
+              <ViewSchedule />
+            </Layout>
+          }
+        />
+        <Route
+          path="/patient/feedback"
+          element={
+            <Layout>
+              <Feedback />
             </Layout>
           }
         />
