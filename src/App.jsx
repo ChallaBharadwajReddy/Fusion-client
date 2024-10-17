@@ -17,9 +17,13 @@ import Announcement from "./Modules/Health Center/Patient/Announcements/Announce
 import HistoryCompounder from "./Modules/Health Center/Compounder/History/HistoryComp";
 import UpdatePatient from "./Modules/Health Center/Compounder/History/UpdatePatient";
 import Inbox from "./Modules/Health Center/Compounder/Medical Relief/Inbox";
-import Application from "./Modules/Health Center/Compounder/Medical Relief/Application";
 import ViewSchedule from "./Modules/Health Center/Patient/Schedule/Viewdoctor";
 import Feedback from "./Modules/Health Center/Patient/Feedback/feedback";
+import Viewdoctor from "./Modules/Health Center/Compounder/Schedule/viewdoctor";
+import Viewpath from "./Modules/Health Center/Compounder/Schedule/viewpath";
+import Editdoctor from "./Modules/Health Center/Compounder/Schedule/editdoctor";
+import Editpath from "./Modules/Health Center/Compounder/Schedule/editpath";
+import FeedbackTable from "./Modules/Health Center/Compounder/Feedback/feedback";
 
 export default function App() {
   const location = useLocation();
@@ -102,6 +106,14 @@ export default function App() {
             </Layout>
           }
         />
+        <Route
+          path="/compounder/feedback"
+          element={
+            <Layout>
+              <FeedbackTable />
+            </Layout>
+          }
+        />
 
         <Route
           path="/patient/medical-relief/apply"
@@ -129,6 +141,38 @@ export default function App() {
             </Layout>
           }
         />
+        <Route
+          path="/compounder/viewdoctor"
+          element={
+            <Layout>
+              <Viewdoctor />
+            </Layout>
+          }
+        />
+        <Route
+          path="/compounder/editdoctor"
+          element={
+            <Layout>
+              <Editdoctor />
+            </Layout>
+          }
+        />
+        <Route
+          path="/compounder/viewpath"
+          element={
+            <Layout>
+              <Viewpath />
+            </Layout>
+          }
+        />
+        <Route
+          path="/compounder/editpath"
+          element={
+            <Layout>
+              <Editpath />
+            </Layout>
+          }
+        />
 
         <Route
           path="/compounder/patient-log/update"
@@ -144,15 +188,6 @@ export default function App() {
           element={
             <Layout>
               <Inbox />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/compounder/medical-relief/application"
-          element={
-            <Layout>
-              <Application />
             </Layout>
           }
         />

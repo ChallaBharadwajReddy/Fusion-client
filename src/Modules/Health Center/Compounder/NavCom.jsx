@@ -54,7 +54,7 @@ function NavCom() {
             <Divider orientation="vertical" />
 
             <NavLink
-              to="/schedule"
+              to="/compounder/viewdoctor"
               style={({ isActive }) => ({
                 textDecoration: "none",
                 fontSize: "1.25rem",
@@ -82,7 +82,7 @@ function NavCom() {
         ) : (
           <>
             <NavLink
-              to="/feedback"
+              to="/compounder/feedback"
               style={({ isActive }) => ({
                 textDecoration: "none",
                 fontSize: "1.25rem",
