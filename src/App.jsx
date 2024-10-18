@@ -9,6 +9,8 @@ import LoginPage from "./pages/login";
 import ForgotPassword from "./pages/forgotPassword";
 import AcademicPage from "./Modules/Academic/index";
 import ValidateAuth from "./helper/validateauth";
+import CompAnnounements from "./Modules/Health Center/Compounder/Announcement/Announements";
+import Record from "./Modules/Health Center/Compounder/Announcement/Record";
 import Apply from "./Modules/Health Center/Patient/Medical Relief/Apply";
 import Approval from "./Modules/Health Center/Patient/Medical Relief/Approval";
 import History from "./Modules/Health Center/Patient/History/History";
@@ -63,7 +65,22 @@ export default function App() {
             </Layout>
           }
         />
-
+        <Route
+          path="/compounder/announcement"
+          element={
+            <Layout>
+              <CompAnnounements />
+            </Layout>
+          }
+        />
+        <Route
+          path="/compounder/announcement/record"
+          element={
+            <Layout>
+              <Record />
+            </Layout>
+          }
+        />
         <Route
           path="/patient/history"
           element={
@@ -191,7 +208,6 @@ export default function App() {
             </Layout>
           }
         />
-
         <Route path="/accounts/login" element={<LoginPage />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
       </Routes>
