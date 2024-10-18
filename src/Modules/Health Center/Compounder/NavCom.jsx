@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Container, Group, Divider } from "@mantine/core";
-import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
+import { CaretCircleLeft, CaretCircleRight } from "@phosphor-icons/react";
 
 function NavCom() {
   const [showFirstGroup, setShowFirstGroup] = useState(true);
@@ -14,7 +13,8 @@ function NavCom() {
   return (
     <Container>
       <Group position="center" spacing="xl" p="md">
-        <ArrowCircleLeftOutlinedIcon
+        <CaretCircleLeft
+          size={32}
           fontSize="large"
           onClick={showFirstGroup ? null : toggleGroup}
           style={{
@@ -54,7 +54,7 @@ function NavCom() {
             <Divider orientation="vertical" />
 
             <NavLink
-              to="/compounder/viewdoctor"
+              to="/schedule"
               style={({ isActive }) => ({
                 textDecoration: "none",
                 fontSize: "1.25rem",
@@ -82,7 +82,7 @@ function NavCom() {
         ) : (
           <>
             <NavLink
-              to="/compounder/feedback"
+              to="/feedback"
               style={({ isActive }) => ({
                 textDecoration: "none",
                 fontSize: "1.25rem",
@@ -123,7 +123,8 @@ function NavCom() {
           </>
         )}
 
-        <ArrowCircleRightOutlinedIcon
+        <CaretCircleRight
+          size={32}
           fontSize="large"
           onClick={showFirstGroup ? toggleGroup : null}
           style={{

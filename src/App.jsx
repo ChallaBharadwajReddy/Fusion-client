@@ -9,6 +9,7 @@ import LoginPage from "./pages/login";
 import ForgotPassword from "./pages/forgotPassword";
 import AcademicPage from "./Modules/Academic/index";
 import ValidateAuth from "./helper/validateauth";
+
 import CompAnnounements from "./Modules/Health Center/Compounder/Announcement/Announements";
 import Record from "./Modules/Health Center/Compounder/Announcement/Record";
 import Apply from "./Modules/Health Center/Patient/Medical Relief/Apply";
@@ -19,6 +20,7 @@ import Announcement from "./Modules/Health Center/Patient/Announcements/Announce
 import HistoryCompounder from "./Modules/Health Center/Compounder/History/HistoryComp";
 import UpdatePatient from "./Modules/Health Center/Compounder/History/UpdatePatient";
 import Inbox from "./Modules/Health Center/Compounder/Medical Relief/Inbox";
+import Application from "./Modules/Health Center/Compounder/Medical Relief/Application";
 import ViewSchedule from "./Modules/Health Center/Patient/Schedule/Viewdoctor";
 import Feedback from "./Modules/Health Center/Patient/Feedback/feedback";
 import Viewdoctor from "./Modules/Health Center/Compounder/Schedule/viewdoctor";
@@ -82,6 +84,14 @@ export default function App() {
           }
         />
         <Route
+          path="/compounder/medical-relief/application"
+          element={
+            <Layout>
+              <Application />
+            </Layout>
+          }
+        />
+        <Route
           path="/patient/history"
           element={
             <Layout>
@@ -104,30 +114,6 @@ export default function App() {
           element={
             <Layout>
               <Announcement />
-            </Layout>
-          }
-        />
-        <Route
-          path="/patient/viewschedule"
-          element={
-            <Layout>
-              <ViewSchedule />
-            </Layout>
-          }
-        />
-        <Route
-          path="/patient/feedback"
-          element={
-            <Layout>
-              <Feedback />
-            </Layout>
-          }
-        />
-        <Route
-          path="/compounder/feedback"
-          element={
-            <Layout>
-              <FeedbackTable />
             </Layout>
           }
         />
@@ -158,6 +144,59 @@ export default function App() {
             </Layout>
           }
         />
+
+        <Route
+          path="/compounder/patient-log/update"
+          element={
+            <Layout>
+              <UpdatePatient />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/compounder/medical-relief/inbox"
+          element={
+            <Layout>
+              <Inbox />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/compounder/medical-relief/application"
+          element={
+            <Layout>
+              <Application />
+            </Layout>
+          }
+        />
+
+        <Route
+          path="/patient/viewschedule"
+          element={
+            <Layout>
+              <ViewSchedule />
+            </Layout>
+          }
+        />
+        <Route
+          path="/patient/feedback"
+          element={
+            <Layout>
+              <Feedback />
+            </Layout>
+          }
+        />
+        <Route
+          path="/compounder/feedback"
+          element={
+            <Layout>
+              <FeedbackTable />
+            </Layout>
+          }
+        />
+
         <Route
           path="/compounder/viewdoctor"
           element={
@@ -191,23 +230,6 @@ export default function App() {
           }
         />
 
-        <Route
-          path="/compounder/patient-log/update"
-          element={
-            <Layout>
-              <UpdatePatient />
-            </Layout>
-          }
-        />
-
-        <Route
-          path="/compounder/medical-relief/inbox"
-          element={
-            <Layout>
-              <Inbox />
-            </Layout>
-          }
-        />
         <Route path="/accounts/login" element={<LoginPage />} />
         <Route path="/reset-password" element={<ForgotPassword />} />
       </Routes>
