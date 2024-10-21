@@ -49,8 +49,13 @@ function FeedbackTable() {
             </tr>
           </thead>
           <tbody>
-            {feedbackData.map((item) => (
-              <tr key={item.rollNo}>
+            {feedbackData.map((item, index) => (
+              <tr
+                key={item.rollNo} // Use rollNo as a unique key
+                style={{
+                  backgroundColor: index % 2 === 0 ? "#ede9fe" : "#faf5ff",
+                }}
+              >
                 <td style={tdStyle}>{item.rollNo}</td>
                 <td style={tdStyle}>{item.feedback}</td>
               </tr>
