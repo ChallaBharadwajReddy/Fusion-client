@@ -303,44 +303,38 @@ function UpdatePatient() {
       <HistoryNavBar />
       <br />
       <Paper shadow="xl" p="xl" withBorder>
-        <div>
-          <div style={{ display: "flex" }}>
-            <div style={{ paddingRight: "100px" }}>
-              <p style={{ marginBottom: "2px" }}>Patient</p>
-              <Input
-                type="text"
-                placeholder="Patient Id"
-                value={patientId}
-                onChange={(e) => setpatientId(e.target.value)}
-              />
-            </div>
+        <Flex gap="lg" justify="flex-start" align="flex-start">
+          <Flex>
+            <TextInput
+              type="text"
+              label="Patient"
+              placeholder="Patient Id"
+              value={patientId}
+              onChange={(e) => setpatientId(e.target.value)}
+            />
+          </Flex>
 
-            <div style={{ display: "flex", gap: "2rem" }}>
-              <div>
-                <p style={{ marginBottom: "2px" }}>Doctor</p>
-                <Select
-                  name="doctor"
-                  placeholder="--Select--"
-                  value={doctorName}
-                  onChange={(e) => setDoctorName(e)}
-                  data={doctors.map((doc) => doc.doctor_name)}
-                />
-              </div>
+          <Flex gap="md" wrap="wrap">
+            <Select
+              name="doctor"
+              label="Doctor"
+              placeholder="--Select--"
+              value={doctorName}
+              onChange={(e) => setDoctorName(e)}
+              data={doctors.map((doc) => doc.doctor_name)}
+            />
 
-              <div>
-                <p style={{ marginBottom: "2px" }}>Details of Disease</p>
-                <Input
-                  type="text"
-                  name="diseaseDetails"
-                  placeholder="Input Text"
-                  value={diseaseDetails}
-                  onChange={(e) => setdiseaseDetails(e.target.value)}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <br />
+            <Textarea
+              type="text"
+              label="Details of Disease"
+              name="diseaseDetails"
+              placeholder="Input Text"
+              value={diseaseDetails}
+              onChange={(e) => setdiseaseDetails(e.target.value)}
+            />
+          </Flex>
+        </Flex>
+
         <div style={{ display: "flex", gap: "1rem" }}>
           <Radio
             label="Self"
